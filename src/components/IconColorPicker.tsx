@@ -8,12 +8,7 @@ export default function IconColorPicker() {
   return (
     <div>
       <Text size="lg">Icon Color</Text>
-      <ColorPicker
-        value={color}
-        onChange={setColor}
-        hideColorTypeBtns
-        hideControls
-      />
+      <ColorPicker value={color} onChange={setColor} hideControls />
     </div>
   );
 }
