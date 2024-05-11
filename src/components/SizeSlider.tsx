@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Slider, Text } from "@mantine/core";
+import { styles_atom } from "@/atoms/styles_atom";
 
 export default function SizeSlider() {
-  const [size, setSize] = useState(180);
+  const size = styles_atom.use("size");
 
   return (
     <div className="my-4">
@@ -12,7 +12,7 @@ export default function SizeSlider() {
       </div>
       <Slider
         value={size}
-        onChange={setSize}
+        onChange={(value) => styles_atom.change("size", value)}
         label={null}
         min={0}
         max={512}

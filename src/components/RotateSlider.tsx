@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Slider, Text } from "@mantine/core";
+import { styles_atom } from "@/atoms/styles_atom";
 
 export default function RotateSlider() {
-  const [rotate, setRotate] = useState(0);
+  const rotate = styles_atom.use("rotate");
 
   return (
     <div className="my-4">
@@ -12,7 +12,7 @@ export default function RotateSlider() {
       </div>
       <Slider
         value={rotate}
-        onChange={setRotate}
+        onChange={(value) => styles_atom.change("rotate", value)}
         label={null}
         min={0}
         max={360}

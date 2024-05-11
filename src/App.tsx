@@ -2,8 +2,11 @@ import Navbar from "@/components/Navbar";
 import { Group, Stack } from "@mantine/core";
 import Sidebar from "@/components/Sidebar";
 import Main from "@/components/Main";
+import useCache from "./hooks/useCache";
 
 export default function App() {
+  useCache();
+
   return (
     <Stack className="h-screen p-3 overflow-auto" gap={10}>
       <Navbar />

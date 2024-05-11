@@ -1,16 +1,16 @@
 import { Text } from "@mantine/core";
-import { useState } from "react";
+import { styles_atom } from "@/atoms/styles_atom";
 import ColorPicker from "react-best-gradient-color-picker";
 
 export default function IconBackgroundColorPicker() {
-  const [color, setColor] = useState("#f15757");
+  const background = styles_atom.use("background");
 
   return (
     <div>
       <Text size="lg">Icon Color</Text>
       <ColorPicker
-        value={color}
-        onChange={setColor}
+        value={background}
+        onChange={(value) => styles_atom.change("background", value)}
         hideEyeDrop
         hideAdvancedSliders
         hideColorGuide
