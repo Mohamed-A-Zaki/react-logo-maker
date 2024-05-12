@@ -1,9 +1,14 @@
+import { selected_icon_atom } from "@/atoms/selected_icon_atom";
 import { styles_atom } from "@/atoms/styles_atom";
 import { icons } from "@/utils/icons";
 
 export default function IconPreview() {
-  const { background, color, padding, size, rotate, rounded } =
+  const { background, color, padding, rotate, rounded, size } =
     styles_atom.useValue();
+
+  const icon = selected_icon_atom.useValue();
+
+  const Icon = icons[icon] || icons.CiFaceSmile;
 
   return (
     <div className="border p-4 rounded-md flex items-center justify-center">
@@ -14,7 +19,7 @@ export default function IconPreview() {
             borderRadius: rounded,
           }}
         >
-          <icons.FaRegEdit
+          <Icon
             color={color}
             size={size}
             style={{
