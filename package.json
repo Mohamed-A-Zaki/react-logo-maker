@@ -15,6 +15,7 @@
     "@mongez/cache": "^1.2.3",
     "@mongez/react-atom": "^4.0.2",
     "axios": "^1.6.8",
+    "html2canvas": "^1.4.1",
     "react": "^18.2.0",
     "react-best-gradient-color-picker": "^3.0.7",
     "react-dom": "^18.2.0",

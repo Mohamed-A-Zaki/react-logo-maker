@@ -2,7 +2,11 @@ import { selected_icon_atom } from "@/atoms/selected_icon_atom";
 import { styles_atom } from "@/atoms/styles_atom";
 import { icons } from "@/utils/icons";
 
-export default function IconPreview() {
+export default function IconPreview({
+  image_ref,
+}: {
+  image_ref: React.MutableRefObject<HTMLDivElement | null>;
+}) {
   const { background, color, padding, rotate, rounded, size } =
     styles_atom.useValue();
 
@@ -14,6 +18,7 @@ export default function IconPreview() {
     <div className="border p-4 rounded-md flex items-center justify-center">
       <div className="bg-gray-100 h-[520px] w-[520px] border-4 border-dotted rounded-md flex items-center justify-center">
         <div
+          ref={image_ref}
           style={{
             background: background,
             borderRadius: rounded,

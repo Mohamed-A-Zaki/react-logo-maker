@@ -4,7 +4,11 @@ import IconController from "./IconController";
 import BackgroundController from "./BackgroundController";
 import { controller_atom } from "@/atoms/controller_atom";
 
-export default function Main() {
+export default function Main({
+  image_ref,
+}: {
+  image_ref: React.MutableRefObject<HTMLDivElement | null>;
+}) {
   const controller = controller_atom.useValue();
 
   return (
@@ -18,7 +22,7 @@ export default function Main() {
           )}
         </Grid.Col>
         <Grid.Col span={{ base: 12, lg: 8 }}>
-          <IconPreview />
+          <IconPreview image_ref={image_ref} />
         </Grid.Col>
       </Grid>
     </main>
